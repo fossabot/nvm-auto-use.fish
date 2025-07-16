@@ -8,11 +8,12 @@ on:
   pull_request:
     branches: [master, main]
 
-permissions:
-  contents: read
-  packages: read
-  statuses: write
-
 jobs:
-  SuperLinter:
-    uses: ivuorinen/actions/pr-lint@625c37446b1c7e219755a40807f825c9283f6e05 # 25.7.7
+  Linter:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+    steps:
+      - uses: ivuorinen/actions/pr-lint@625c37446b1c7e219755a40807f825c9283f6e05 # 25.7.7
